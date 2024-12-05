@@ -4,12 +4,6 @@ exports.productValidationZodSchema = void 0;
 const zod_1 = require("zod");
 // Zod schema for product validation
 exports.productValidationZodSchema = zod_1.z.object({
-    code: zod_1.z
-        .string({
-        required_error: 'Code is required. Provide it as a string: "code".',
-        invalid_type_error: 'Code must be a string.',
-    })
-        .nonempty('Code is required.'),
     name: zod_1.z
         .string({
         required_error: 'Product Name is required. Provide it as a string: "name".',

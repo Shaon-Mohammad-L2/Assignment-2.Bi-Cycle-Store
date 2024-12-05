@@ -2,7 +2,6 @@ import { Model } from 'mongoose'
 
 //type safety for product fields.
 export type TProducts = {
-   code: string
    name: string
    brand: string
    price: number

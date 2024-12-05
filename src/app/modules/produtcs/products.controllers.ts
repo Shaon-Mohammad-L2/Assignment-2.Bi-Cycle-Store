@@ -9,13 +9,13 @@ const getAllProdcuts = async (req: Request, res: Response) => {
       const result = await ProductService.getAllProductFromDB()
       res.status(200).json({
          success: true,
-         message: 'All Product Successfully Loaded!',
+         message: 'Bicycles retrieved successfully',
          data: result,
       })
    } catch (err: any) {
       res.status(500).json({
          success: false,
-         message: 'Product Loading Failed!',
+         message: 'Bicycle Loading Failed!',
          err,
       })
    }
@@ -29,13 +29,13 @@ const getSingleProduct = async (req: Request, res: Response) => {
       const result = await ProductService.getSingleProductFromDB(productId)
       res.status(200).json({
          success: true,
-         message: 'Product Successfully Loaded!',
+         message: 'Bicycle retrieved successfully!',
          data: result,
       })
    } catch (err: any) {
       res.status(500).json({
          success: false,
-         message: err.message || 'Unable to retrieve product.',
+         message: err.message || 'Unable to retrieve Bicycle.',
          err,
       })
    }
@@ -45,7 +45,7 @@ const getSingleProduct = async (req: Request, res: Response) => {
 
 const createProduct = async (req: Request, res: Response) => {
    try {
-      const { product: productData } = req.body
+      const productData = req.body
 
       const zodParsedData = productValidationZodSchema.parse(productData)
 
@@ -53,7 +53,7 @@ const createProduct = async (req: Request, res: Response) => {
 
       res.status(200).json({
          success: true,
-         message: 'Product Successfully Created!',
+         message: 'Bicycle created successfully!',
          data: result,
       })
    } catch (err: any) {
@@ -61,7 +61,7 @@ const createProduct = async (req: Request, res: Response) => {
          success: false,
          message: err.issues
             ? err.issues[0]?.message
-            : 'Product Creating Failed!',
+            : err.message || 'Bicycle Creating Failed!',
          err,
       })
    }
@@ -73,7 +73,7 @@ const updateProduct = async (req: Request, res: Response) => {
    try {
       const { productId } = req.params
 
-      const { updateProduct: productData } = req.body
+      const productData = req.body
 
       const zodParsedData = productValidationZodSchema.parse(productData)
 
@@ -81,9 +81,10 @@ const updateProduct = async (req: Request, res: Response) => {
          productId,
          zodParsedData,
       )
+
       res.status(200).json({
          success: true,
-         message: 'Product Successfully Updated!',
+         message: 'Bicycle updated successfully!',
          data: result,
       })
    } catch (err: any) {
@@ -91,7 +92,7 @@ const updateProduct = async (req: Request, res: Response) => {
          success: false,
          message: err.issues
             ? err.issues[0]?.message
-            : err.message || 'Product Updating Failed!',
+            : err.message || 'Bicycle Updating Failed!',
          err,
       })
    }
@@ -107,13 +108,13 @@ const deleteProduct = async (req: Request, res: Response) => {
 
       res.status(200).json({
          success: true,
-         message: 'Product Successfully Deleted!',
+         message: 'Bicycle deleted successfully!',
          data: result,
       })
    } catch (err: any) {
       res.status(400).json({
          success: false,
-         message: 'Product Deleting Failed!',
+         message: 'Bicycle deleting Failed!',
          err,
       })
    }

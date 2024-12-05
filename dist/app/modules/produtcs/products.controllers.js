@@ -18,14 +18,14 @@ const getAllProdcuts = (req, res) => __awaiter(void 0, void 0, void 0, function*
         const result = yield products_service_1.ProductService.getAllProductFromDB();
         res.status(200).json({
             success: true,
-            message: 'All Product Successfully Loaded!',
+            message: 'Bicycles retrieved successfully',
             data: result,
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: 'Product Loading Failed!',
+            message: 'Bicycle Loading Failed!',
             err,
         });
     }
@@ -37,14 +37,14 @@ const getSingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
         const result = yield products_service_1.ProductService.getSingleProductFromDB(productId);
         res.status(200).json({
             success: true,
-            message: 'Product Successfully Loaded!',
+            message: 'Bicycle retrieved successfully!',
             data: result,
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: err.message || 'Unable to retrieve product.',
+            message: err.message || 'Unable to retrieve Bicycle.',
             err,
         });
     }
@@ -53,12 +53,12 @@ const getSingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
 const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const { product: productData } = req.body;
+        const productData = req.body;
         const zodParsedData = products_validation_zod_1.productValidationZodSchema.parse(productData);
         const result = yield products_service_1.ProductService.createProductIntoDB(zodParsedData);
         res.status(200).json({
             success: true,
-            message: 'Product Successfully Created!',
+            message: 'Bicycle created successfully!',
             data: result,
         });
     }
@@ -67,7 +67,7 @@ const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             success: false,
             message: err.issues
                 ? (_a = err.issues[0]) === null || _a === void 0 ? void 0 : _a.message
-                : 'Product Creating Failed!',
+                : err.message || 'Bicycle Creating Failed!',
             err,
         });
     }
@@ -77,12 +77,12 @@ const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     var _a;
     try {
         const { productId } = req.params;
-        const { updateProduct: productData } = req.body;
+        const productData = req.body;
         const zodParsedData = products_validation_zod_1.productValidationZodSchema.parse(productData);
         const result = yield products_service_1.ProductService.updateSingleProductIntoDB(productId, zodParsedData);
         res.status(200).json({
             success: true,
-            message: 'Product Successfully Updated!',
+            message: 'Bicycle updated successfully!',
             data: result,
         });
     }
@@ -91,7 +91,7 @@ const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             success: false,
             message: err.issues
                 ? (_a = err.issues[0]) === null || _a === void 0 ? void 0 : _a.message
-                : err.message || 'Product Updating Failed!',
+                : err.message || 'Bicycle Updating Failed!',
             err,
         });
     }
@@ -103,14 +103,14 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         const result = yield products_service_1.ProductService.deleteSingleProductFromDB(productId);
         res.status(200).json({
             success: true,
-            message: 'Product Successfully Deleted!',
+            message: 'Bicycle deleted successfully!',
             data: result,
         });
     }
     catch (err) {
         res.status(400).json({
             success: false,
-            message: 'Product Deleting Failed!',
+            message: 'Bicycle deleting Failed!',
             err,
         });
     }

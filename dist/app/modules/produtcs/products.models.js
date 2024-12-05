@@ -17,12 +17,6 @@ const requiredFun = (subject) => {
 };
 // Mongoose schema definition for products.
 const productSchema = new mongoose_1.Schema({
-    code: {
-        type: String,
-        required: requiredFun('Product Code'),
-        unique: true,
-        trim: true,
-    },
     name: {
         type: String,
         required: requiredFun('Product Name'),

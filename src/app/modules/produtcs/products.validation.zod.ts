@@ -2,12 +2,6 @@ import { z } from 'zod'
 
 // Zod schema for product validation
 export const productValidationZodSchema = z.object({
-   code: z
-      .string({
-         required_error: 'Code is required. Provide it as a string: "code".',
-         invalid_type_error: 'Code must be a string.',
-      })
-      .nonempty('Code is required.'),
    name: z
       .string({
          required_error:
