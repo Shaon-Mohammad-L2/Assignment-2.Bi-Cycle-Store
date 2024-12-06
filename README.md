@@ -26,3 +26,24 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Error Handling**:
   - Custom error messages for validation failures (e.g., required fields, enum & type mismatch).  
   - Prevents invalid product creation or updates.
+
+ ### **2. Order Management**
+
+- **CRUD Operations**: Create, Read, Update, and Delete (CRUD) operations for orders.  
+
+- **Inventory Updates**:
+  - **Reduces Product Stock**: Automatically reduces the product stock when an order is placed.
+  - **Prevents Orders** if:
+    - Stock is insufficient.
+    - `inStock` is `false`.
+    - The product is deleted or unavailable.
+
+- **Aggregation Operation**:
+  - Calculates **total revenue** from all orders.
+  - Uses the **MongoDB aggregation pipeline** for efficient processing.
+
+- **Validations**:
+  - Prevents orders with invalid quantities or missing products.
+  - Ensures accurate total price calculations.
+
+
