@@ -230,7 +230,7 @@ To complete the assignment, submit the following:
    *(Replace `#` with your repository link once ready.)*
 
 2. **Live Deployment Link**  
-   [Live Application](#)  
+   [Live Application](https://assignment-2-bi-cycle-store.vercel.app/)  
    *(Replace `#` with your live application URL, e.g., Vercel link.)*
 
 3. **Video Explanation**  
