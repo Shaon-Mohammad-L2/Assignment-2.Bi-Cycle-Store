@@ -41,7 +41,7 @@ const revenueCalculateForAllOrdersFromDB = () => __awaiter(void 0, void 0, void 
                 totalRevenue: 1,
             },
         },
-    ]);
+    ], { skipMiddleware: true });
     const totalRevenue = result[0] || 0;
     return totalRevenue;
 });

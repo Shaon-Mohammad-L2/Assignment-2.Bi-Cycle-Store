@@ -98,7 +98,11 @@ OrderSchema.pre('findOne', function (next) {
 });
 // Middleware to exclude `isDeleted: true` items during aggregation operations.
 OrderSchema.pre('aggregate', function (next) {
-    this.pipeline().unshift({ $match: { isDeleted: { $ne: true } } });
+    const options = this.options || {};
+    const skipMiddleware = options.skipMiddleware;
+    if (!skipMiddleware) {
+        this.pipeline().unshift({ $match: { isDeleted: { $ne: true } } });
+    }
     next();
 });
 // Mongoose model for orders.

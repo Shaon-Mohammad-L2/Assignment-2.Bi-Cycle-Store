@@ -22,20 +22,23 @@ const deleteSingleOrderFromDB = async (orderId: string) => {
 }
 
 const revenueCalculateForAllOrdersFromDB = async () => {
-   const result = await Orders.aggregate([
-      {
-         $group: {
-            _id: null,
-            totalRevenue: { $sum: '$totalPrice' },
+   const result = await Orders.aggregate(
+      [
+         {
+            $group: {
+               _id: null,
+               totalRevenue: { $sum: '$totalPrice' },
+            },
          },
-      },
-      {
-         $project: {
-            _id: 0,
-            totalRevenue: 1,
+         {
+            $project: {
+               _id: 0,
+               totalRevenue: 1,
+            },
          },
-      },
-   ])
+      ],
+      { skipMiddleware: true },
+   )
 
    const totalRevenue = result[0] || 0
 
