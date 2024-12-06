@@ -115,4 +115,55 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Product Validation**:
   - Ensures valid product references and availability.
 
+### **7. Folder Structure**
+
+```plaintext
+📦 Bi-Cycle Store
+├── 📂 dist                  # Compiled JavaScript files (build output)
+│   ├── 📂 app
+│   ├── 📂 config
+│   ├── 📂 modules
+│   │   ├── 📂 orders
+│   │   │   ├── orders.controllers.js
+│   │   │   ├── orders.interface.js
+│   │   │   ├── orders.models.js
+│   │   │   ├── orders.service.js
+│   │   │   └── orders.validation.zod.js
+│   │   ├── 📂 products
+│   │   │   ├── products.controllers.js
+│   │   │   ├── products.interface.js
+│   │   │   ├── products.models.js
+│   │   │   ├── products.service.js
+│   │   │   └── products.validation.zod.js
+│   ├── app.js
+│   ├── routes.js
+│   └── server.js
+├── 📂 src                   # Source TypeScript files
+│   ├── 📂 app
+│   ├── 📂 config            # Configuration files
+│   ├── 📂 modules
+│   │   ├── 📂 orders
+│   │   │   ├── orders.controllers.ts
+│   │   │   ├── orders.interface.ts
+│   │   │   ├── orders.models.ts
+│   │   │   ├── orders.service.ts
+│   │   │   └── orders.validation.zod.ts
+│   │   ├── 📂 products
+│   │   │   ├── products.controllers.ts
+│   │   │   ├── products.interface.ts
+│   │   │   ├── products.models.ts
+│   │   │   ├── products.service.ts
+│   │   │   └── products.validation.zod.ts
+│   ├── app.ts
+│   ├── routes.ts
+│   └── server.ts
+├── 📂 node_modules          # Installed npm dependencies
+├── .env                     # Environment variables (e.g., database connection strings)
+├── .gitignore               # Git ignore file
+├── .prettierrc.json         # Prettier configuration
+├── eslint.config.mjs        # ESLint configuration
+├── package-lock.json        # Dependency lock file
+├── package.json             # Project metadata and dependencies
+├── tsconfig.json            # TypeScript configuration
+└── vercel.json              # Vercel deployment configuration
 
