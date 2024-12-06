@@ -87,7 +87,23 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Get All Orders**: `/api/orders` (GET)  
 - **Get Order by ID**: `/api/orders/:orderId` (GET)  
 - **Delete Order**: `/api/orders/:orderId` (DELETE)  
-- **Calculate Revenue**: `/api/orders/revenue` (GET)  
+- **Calculate Revenue**: `/api/orders/revenue` (GET)
+
+
+### **ii. Create a Order**
+
+- **Endpoint:** `/api/orders`
+- **Method:** `POST`
+- **Request Body:**
+
+```json
+{
+  "email": "customer@example.com",
+  "product": "648a45e5f0123c45678d9012",
+  "quantity": 2,
+  "totalPrice": 600
+}
+```
 
 ### **4. Architecture**
 
