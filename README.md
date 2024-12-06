@@ -90,7 +90,7 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Calculate Revenue**: `/api/orders/revenue` (GET)
 
 
-### **ii. Create a Order**
+### **i. Create a Order**
 
 - **Endpoint:** `/api/orders`
 - **Method:** `POST`
