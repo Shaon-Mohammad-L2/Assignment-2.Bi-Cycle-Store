@@ -53,7 +53,25 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Get All Products**: `/api/products` (GET)  
 - **Get Product by ID**: `/api/products/:productId` (GET)  
 - **Update Product**: `/api/products/:productId` (PUT)  
-- **Delete Product**: `/api/products/:productId` (DELETE)  
+- **Delete Product**: `/api/products/:productId` (DELETE)
+
+### **1. Create a Bicycle**
+
+- **Endpoint:** `/api/products`
+- **Method:** `POST`
+- **Request Body:**
+
+```json
+{
+  "name": "Roadster 5000",
+  "brand": "SpeedX",
+  "price": 300,
+  "type": "Road",
+  "description": "A premium road bike designed for speed and performance.",
+  "quantity": 20,
+  "inStock": true
+}
+
 
 #### **2. Order Endpoints**
 - **Create Order**: `/api/orders` (POST)  
