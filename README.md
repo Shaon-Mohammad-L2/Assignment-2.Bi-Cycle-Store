@@ -223,22 +223,16 @@ DATA_BASE_URL = <your_database_url>  # Example: mongodb+srv://<username>:<passwo
 ```
 ### **9. Submission**
 
-To complete the assignment, submit the following:
-
 1. **GitHub Repository Link**  
-   [GitHub Repository](#)  
-   *(Replace `#` with your repository link once ready.)*
+   [GitHub Repository](https://github.com/Shaon-Mohammad-L2/Assignment-2.Bi-Cycle-Store)  
 
 2. **Live Deployment Link**  
    [Live Application](https://assignment-2-bi-cycle-store.vercel.app/)  
-   *(Replace `#` with your live application URL, e.g., Vercel link.)*
 
 3. **Video Explanation**  
-   [Video Walkthrough](#)  
-   *(Replace `#` with your public Google Drive or YouTube link for the video.)*
+   [Video Walkthrough](https://drive.google.com/file/d/1QDt6rYu6npezdA2QNa3BjV4wBIXE_sxr/view?usp=sharing)  
 
 4. **Professional README File**  
-   This file includes:
-   - Features of the application.
-   - Instructions on setting up the project locally.
+   [View README](https://github.com/Shaon-Mohammad-L2/Assignment-2.Bi-Cycle-Store/blob/main/README.md)
+
 
