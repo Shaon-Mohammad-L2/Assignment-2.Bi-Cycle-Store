@@ -46,4 +46,21 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
   - Prevents orders with invalid quantities or missing products.
   - Ensures accurate total price calculations.
 
+### **3. Endpoints**
+
+#### **1. Product Endpoints**
+- **Create Product**: `/api/products` (POST)  
+- **Get All Products**: `/api/products` (GET)  
+- **Get Product by ID**: `/api/products/:productId` (GET)  
+- **Update Product**: `/api/products/:productId` (PUT)  
+- **Delete Product**: `/api/products/:productId` (DELETE)  
+
+#### **2. Order Endpoints**
+- **Create Order**: `/api/orders` (POST)  
+- **Get All Orders**: `/api/orders` (GET)  
+- **Get Order by ID**: `/api/orders/:orderId` (GET)  
+- **Delete Order**: `/api/orders/:orderId` (DELETE)  
+- **Calculate Revenue**: `/api/orders/revenue` (GET)  
+
+
 
