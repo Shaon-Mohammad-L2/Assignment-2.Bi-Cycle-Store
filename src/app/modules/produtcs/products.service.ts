@@ -3,8 +3,12 @@ import { Products } from './products.models'
 
 // Fetch all products from the database
 
-const getAllProductFromDB = async () => {
-   const result = await Products.find()
+const getAllProductFromDB = async (searchTerm: string) => {
+   const query: any = {}
+   if (searchTerm) {
+      query.$text = { $search: searchTerm }
+   }
+   const result = await Products.find(query)
    return result
 }
 

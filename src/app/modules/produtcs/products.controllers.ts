@@ -1,16 +1,20 @@
-import { Request, Response } from 'express'
+import { Request, RequestHandler, Response } from 'express'
 import { productValidationZodSchema } from './products.validation.zod'
 import { ProductService } from './products.service'
 
 // Controller to retrieve all products.
 
-const getAllProdcuts = async (req: Request, res: Response) => {
+const getAllProdcuts: RequestHandler = async (req: Request, res: Response) => {
    try {
-      const result = await ProductService.getAllProductFromDB()
+      const { searchTerm } = req.query
+      const result = await ProductService.getAllProductFromDB(
+         searchTerm as string,
+      )
+
       res.status(200).json({
          success: true,
          message: 'Bicycles retrieved successfully',
-         data: result,
+         data: result.length > 0 ? result : 'No Bi-Cycle found',
       })
    } catch (err: any) {
       res.status(500).json({
@@ -30,7 +34,7 @@ const getSingleProduct = async (req: Request, res: Response) => {
       res.status(200).json({
          success: true,
          message: 'Bicycle retrieved successfully!',
-         data: result,
+         data: result || 'No Bi-Cycle found',
       })
    } catch (err: any) {
       res.status(500).json({

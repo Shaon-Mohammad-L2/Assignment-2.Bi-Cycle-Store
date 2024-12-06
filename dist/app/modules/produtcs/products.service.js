@@ -12,8 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductService = void 0;
 const products_models_1 = require("./products.models");
 // Fetch all products from the database
-const getAllProductFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield products_models_1.Products.find();
+const getAllProductFromDB = (searchTerm) => __awaiter(void 0, void 0, void 0, function* () {
+    const query = {};
+    if (searchTerm) {
+        query.$text = { $search: searchTerm };
+    }
+    const result = yield products_models_1.Products.find(query);
     return result;
 });
 // Fetch a single product by its ID, ensuring it is not marked as deleted.

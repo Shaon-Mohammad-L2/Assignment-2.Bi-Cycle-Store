@@ -113,5 +113,7 @@ productSchema.statics.isDeletedTrue = function (productId) {
         return existingIsDeletedTrue;
     });
 };
+// Create a text index on name, brand, and type fields
+productSchema.index({ name: 'text', brand: 'text', type: 'text' });
 // Mongoose model for products.
 exports.Products = (0, mongoose_1.model)('Product', productSchema);

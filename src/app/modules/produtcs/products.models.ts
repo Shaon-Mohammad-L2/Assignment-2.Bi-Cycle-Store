@@ -119,5 +119,8 @@ productSchema.statics.isDeletedTrue = async function (productId: string) {
    return existingIsDeletedTrue
 }
 
+// Create a text index on name, brand, and type fields
+productSchema.index({ name: 'text', brand: 'text', type: 'text' })
+
 // Mongoose model for products.
 export const Products = model<TProducts, ProductModel>('Product', productSchema)

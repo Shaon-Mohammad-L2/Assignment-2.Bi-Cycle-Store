@@ -15,11 +15,12 @@ const products_service_1 = require("./products.service");
 // Controller to retrieve all products.
 const getAllProdcuts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield products_service_1.ProductService.getAllProductFromDB();
+        const { searchTerm } = req.query;
+        const result = yield products_service_1.ProductService.getAllProductFromDB(searchTerm);
         res.status(200).json({
             success: true,
             message: 'Bicycles retrieved successfully',
-            data: result,
+            data: result.length > 0 ? result : 'No Bi-Cycle found',
         });
     }
     catch (err) {
@@ -38,7 +39,7 @@ const getSingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(200).json({
             success: true,
             message: 'Bicycle retrieved successfully!',
-            data: result,
+            data: result || 'No Bi-Cycle found',
         });
     }
     catch (err) {
