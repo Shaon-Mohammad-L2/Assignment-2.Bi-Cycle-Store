@@ -15,6 +15,7 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 ### **1. Product Management**
 
 - **CRUD Operations**: Create, Read, Update, and Delete (CRUD) operations for bicycles.  
+
 - **Validations**:
   - **Required Fields**: `Name`, `Brand`, `Type`, `inStock`, `Quantity`, and `Price` are validated using **Zod** and **Mongoose schema**.
   - **Type Enum Validation**: Supports the following bicycle types: `Mountain`, `Road`, `Hybrid`, `BMX`, and `Electric`.
@@ -22,6 +23,13 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
   - **Boolean Checks**: Validates `inStock` and other boolean flags.
   - **Dynamic Stock Updates**:  
     - If the `quantity` is `0`, the `inStock` value is automatically set to `false`, even if `true` is provided in the input.
+
+- **Query Functionality**:  
+  - You can search for products based on their `name`, `brand`, or `type` using a query parameter.  
+  - **Endpoint Example**:  
+    `/api/products?searchTerm=type`  
+    - Replace `type` with the search term (e.g., `Mountain`, `Road`, etc.) to filter products accordingly.
+
 
 - **Error Handling**:
   - Custom error messages for validation failures (e.g., required fields, enum & type mismatch).  
