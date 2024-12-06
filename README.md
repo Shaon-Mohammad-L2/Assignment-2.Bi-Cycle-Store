@@ -176,3 +176,26 @@ The application uses the following environment variables. Ensure to set these va
 NODE_ENV = development
 PORT = <your_port_number>         # Example: 5000
 DATA_BASE_URL = <your_database_url>  # Example: mongodb+srv://<username>:<password>@cluster0.mongodb.net/<database-name>
+
+```
+### **9. Submission**
+
+To complete the assignment, submit the following:
+
+1. **GitHub Repository Link**  
+   [GitHub Repository](#)  
+   *(Replace `#` with your repository link once ready.)*
+
+2. **Live Deployment Link**  
+   [Live Application](#)  
+   *(Replace `#` with your live application URL, e.g., Vercel link.)*
+
+3. **Video Explanation**  
+   [Video Walkthrough](#)  
+   *(Replace `#` with your public Google Drive or YouTube link for the video.)*
+
+4. **Professional README File**  
+   This file includes:
+   - Features of the application.
+   - Instructions on setting up the project locally.
+
