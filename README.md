@@ -59,7 +59,7 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 #### **1. Product Endpoints**
 - **Create Product**: `/api/products` (POST)  
 - **Get All Products**: `/api/products` (GET)
-- **Query**: `/api/products?searchTerm=type` (searchTerm can be name, brand, type)
+- **Query**: `/api/products?searchTerm=type` (GET) (searchTerm can be name, brand, type)
 - **Update Product**: `/api/products/:productId` (PUT)  
 - **Delete Product**: `/api/products/:productId` (DELETE)
 
