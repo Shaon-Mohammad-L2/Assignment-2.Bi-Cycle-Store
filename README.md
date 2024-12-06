@@ -15,6 +15,7 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 ### **1. Product Management**
 
 - **CRUD Operations**: Create, Read, Update, and Delete (CRUD) operations for bicycles.  
+
 - **Validations**:
   - **Required Fields**: `Name`, `Brand`, `Type`, `inStock`, `Quantity`, and `Price` are validated using **Zod** and **Mongoose schema**.
   - **Type Enum Validation**: Supports the following bicycle types: `Mountain`, `Road`, `Hybrid`, `BMX`, and `Electric`.
@@ -22,6 +23,13 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
   - **Boolean Checks**: Validates `inStock` and other boolean flags.
   - **Dynamic Stock Updates**:  
     - If the `quantity` is `0`, the `inStock` value is automatically set to `false`, even if `true` is provided in the input.
+
+- **Query Functionality**:  
+  - You can search for products based on their `name`, `brand`, or `type` using a query parameter.  
+  - **Endpoint Example**:  
+    `/api/products?searchTerm=type`  
+    - Replace `type` with the search term (e.g., `Mountain`, `Road`, etc.) to filter products accordingly.
+
 
 - **Error Handling**:
   - Custom error messages for validation failures (e.g., required fields, enum & type mismatch).  
@@ -50,8 +58,8 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 
 #### **1. Product Endpoints**
 - **Create Product**: `/api/products` (POST)  
-- **Get All Products**: `/api/products` (GET)  
-- **Get Product by ID**: `/api/products/:productId` (GET)  
+- **Get All Products**: `/api/products` (GET)
+- **Query**: `/api/products?searchTerm=type` (GET) (searchTerm can be name, brand, type)
 - **Update Product**: `/api/products/:productId` (PUT)  
 - **Delete Product**: `/api/products/:productId` (DELETE)
 
@@ -79,7 +87,23 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Get All Orders**: `/api/orders` (GET)  
 - **Get Order by ID**: `/api/orders/:orderId` (GET)  
 - **Delete Order**: `/api/orders/:orderId` (DELETE)  
-- **Calculate Revenue**: `/api/orders/revenue` (GET)  
+- **Calculate Revenue**: `/api/orders/revenue` (GET)
+
+
+### **i. Create a Order**
+
+- **Endpoint:** `/api/orders`
+- **Method:** `POST`
+- **Request Body:**
+
+```json
+{
+  "email": "customer@example.com",
+  "product": "648a45e5f0123c45678d9012",
+  "quantity": 2,
+  "totalPrice": 600
+}
+```
 
 ### **4. Architecture**
 
@@ -206,7 +230,7 @@ To complete the assignment, submit the following:
    *(Replace `#` with your repository link once ready.)*
 
 2. **Live Deployment Link**  
-   [Live Application](#)  
+   [Live Application](https://assignment-2-bi-cycle-store.vercel.app/)  
    *(Replace `#` with your live application URL, e.g., Vercel link.)*
 
 3. **Video Explanation**  
