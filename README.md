@@ -62,5 +62,57 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Delete Order**: `/api/orders/:orderId` (DELETE)  
 - **Calculate Revenue**: `/api/orders/revenue` (GET)  
 
+### **4. Architecture**
+
+- **TypeScript**:
+  - Interfaces and types for **strong type checking**.
+  - **Clean and readable code** with strict linting using **ESLint** and **Prettier**.
+
+- **Mongoose**:
+  - **Schemas and models** for data definition and operations.
+  - **Middleware** for custom business logic (e.g., pre-save hooks).
+  - **Static methods** for reusable database logic.
+
+- **Zod**:
+  - **Input validation** with custom error messages for improved user experience.
+  - Ensures **data consistency** before database operations.
+
+### **5. Technologies Used**
+
+- **Languages & Frameworks**:
+  - **TypeScript**
+  - **Express.js**
+
+- **Database**:
+  - **MongoDB**
+  - **Mongoose**
+
+- **Validation**:
+  - **Zod**
+
+- **Code Quality**:
+  - **ESLint** with **Prettier**
+
+- **Deployment**:
+  - **[GitHub & Vercel]**
+
+### **6. Validations**
+
+#### **Product Validation**
+- **Name, Brand, Price, Type**: Required fields with type checks.
+- **Enum Validation**: Ensures type matches predefined categories.
+- **Quantity & Price**: Must be positive numbers.
+- **inStock**: Boolean (true/false).
+- **Custom Messages**:
+  - Example: *"Price must be a positive number".*
+
+#### **Order Validation**
+- **Stock Checks**:
+  - Fails if `orderQuantity > product.quantity`.
+  - Prevents ordering deleted products or products out of stock.
+- **Accurate Pricing**:
+  - Total price calculated as `product.price * orderQuantity`.
+- **Product Validation**:
+  - Ensures valid product references and availability.
 
 
