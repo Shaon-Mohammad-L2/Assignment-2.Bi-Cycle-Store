@@ -55,7 +55,7 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 - **Update Product**: `/api/products/:productId` (PUT)  
 - **Delete Product**: `/api/products/:productId` (DELETE)
 
-### **1. Create a Bicycle**
+### **i. Create a Bicycle**
 
 - **Endpoint:** `/api/products`
 - **Method:** `POST`
@@ -72,6 +72,7 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
   "inStock": true
 }
 
+```
 
 #### **2. Order Endpoints**
 - **Create Order**: `/api/orders` (POST)  
