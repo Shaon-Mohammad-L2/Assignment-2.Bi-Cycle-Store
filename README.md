@@ -167,3 +167,12 @@ The **Bi-Cycle Store API** aims to manage product inventory and order processing
 ├── tsconfig.json            # TypeScript configuration
 └── vercel.json              # Vercel deployment configuration
 
+```
+### **8. Environment Variables**
+
+The application uses the following environment variables. Ensure to set these values in a `.env` file before running the application:
+
+```plaintext
+NODE_ENV = development
+PORT = <your_port_number>         # Example: 5000
+DATA_BASE_URL = <your_database_url>  # Example: mongodb+srv://<username>:<password>@cluster0.mongodb.net/<database-name>
